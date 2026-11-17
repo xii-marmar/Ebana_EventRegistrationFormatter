@@ -1,22 +1,28 @@
-# Version 1: Basic Input and Output
+# Version 2: Added String Formatting
 
-# Required Inputs
-first_name = input("Enter student first name: ")
-last_name = input("Enter student last name: ")
-section = input("Enter section: ")
-event_name = input("Enter event name: ")
-event_year = input("Enter event year: ")
-event_month = input("Enter event month: ")
-event_day = input("Enter event day: ")
+# Required Inputs (.strip() cleans leading/trailing whitespace)
+first_name = input("Enter student first name: ").strip()
+last_name = input("Enter student last name: ").strip()
+section = input("Enter section: ").strip()
+event_name = input("Enter event name: ").strip()
+event_year = input("Enter event year: ").strip()
+event_month = input("Enter event month: ").strip()
+event_day = input("Enter event day: ").strip()
 
-# Basic Output (unformatted)
+# String Formatting
+full_name = f"{first_name} {last_name}".title()
+name_code = full_name.upper()
+formatted_section = section.upper()
+formatted_event = event_name.title()
+
+# Output with string formatting applied
 print("\nStudent Event Registration Summary\n")
-print("Name:", first_name + " " + last_name)
-print("Name Code:", first_name + " " + last_name)
-print("Section:", section)
-print("Event:", event_name)
-print("Event Date:", event_month + "/" + event_day + "/" + event_year)
+print(f"Name: {full_name}")
+print(f"Name Code: {name_code}")
+print(f"Section: {formatted_section}")
+print(f"Event: {formatted_event}")
+print(f"Event Date: {event_month}/{event_day}/{event_year}")
 print("Language Used: Python")
-print("String Feature Used: None yet")
+print("String Feature Used: strip(), title(), upper()")
 print("Date/Time Feature Used: None yet")
 print("\nRegistration record created successfully.")
